@@ -5,13 +5,13 @@ namespace NikolayTrofimovUnityC
 {
     internal abstract class InteractiveObject : MonoBehaviour
     {
-        protected abstract void Interaction();
+        protected abstract void Interaction(PlayerBall playerBall);
 
         private void OnTriggerEnter(Collider other)
         {
             if(other.CompareTag("Player"))
             {
-                Interaction();
+                Interaction(other.GetComponent<PlayerBall>());
                 Destroy(gameObject);
             }
         }

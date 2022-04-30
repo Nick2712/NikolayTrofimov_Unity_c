@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace NikolayTrofimovUnityC
 {
-    public class CameraController : MonoBehaviour
+    internal sealed class CameraController : MonoBehaviour
     {
         [SerializeField] private Player _player;
         private Vector3 _offset;
+
 
         private void Start()
         {

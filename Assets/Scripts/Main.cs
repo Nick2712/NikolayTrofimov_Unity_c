@@ -17,6 +17,11 @@ namespace NikolayTrofimovUnityC
         {
             _player = FindObjectOfType<PlayerBall>();
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
+            var cameraController = FindObjectOfType<CameraController>();
+            foreach (var interactiveObject in _interactiveObjects)
+            {
+                interactiveObject.OnInteractionAction += cameraController.CameraShake.Shake;
+            }
         }
 
         private void FixedUpdate()

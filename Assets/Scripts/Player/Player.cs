@@ -9,7 +9,8 @@ namespace NikolayTrofimovUnityC
         protected float _health = 10;
         protected Rigidbody _rigidbody;
         
-        public void Start()
+
+        private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
         }

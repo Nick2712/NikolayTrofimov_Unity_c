@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -15,6 +13,7 @@ namespace NikolayTrofimovUnityC
         private float _lowerPosition;
         private DisplayBonuses _displayBonuses;
         private Effects[] _effects;
+
 
         private void Awake()
         {

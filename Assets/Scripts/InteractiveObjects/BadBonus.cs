@@ -12,6 +12,7 @@ namespace NikolayTrofimovUnityC
         private float _lowerPosition;
         private Effects[] _effects;
 
+
         private void Awake()
         {
             _lowerPosition = transform.position.y;

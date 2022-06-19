@@ -7,6 +7,8 @@ namespace NikolayTrofimovUnityC
     {
         [SerializeField] private Player _player;
         private Vector3 _offset;
+        private Vector3 _shakeOfset;
+        public CameraShake CameraShake { get; private set; } = new CameraShake();
 
 
         private void Start()
@@ -14,9 +16,15 @@ namespace NikolayTrofimovUnityC
             _offset = transform.position - _player.gameObject.transform.position;
         }
 
+        private void FixedUpdate()
+        {
+            CameraShake.Update(Time.fixedDeltaTime);
+        }
+
         private void LateUpdate()
         {
-            transform.position = _player.gameObject.transform.position + _offset;
+            _shakeOfset.y = CameraShake.ShakeThreshold;
+            transform.position = _player.gameObject.transform.position + _offset + _shakeOfset;
         }
     }
 }

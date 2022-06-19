@@ -1,4 +1,4 @@
-using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 
@@ -6,10 +6,14 @@ namespace NikolayTrofimovUnityC
 {
     internal sealed class DisplayBonuses
     {
-        private Text _text;
+        private readonly Text _text;
+
+
         public DisplayBonuses()
         {
-            _text = Object.FindObjectOfType<Text>();
+            _text = UnityEngine.Object.FindObjectOfType<Text>();
+
+            if (_text == null) throw new Exception($"UI Text not found {nameof(DisplayBonuses)}");
         }
 
         public void Display(int value)
